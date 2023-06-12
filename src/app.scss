@@ -1,0 +1,125 @@
+.products-container {
+  max-width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2em;
+
+  .card {
+    padding: 0;
+    width: calc((1000px - (2em*2)) / 3);
+    display: flex;
+    flex-direction: column;
+    border: solid 2px transparent;
+    transition: border-color 250ms, scale 150ms;
+    &:hover {
+      border-color: #646cff;
+      scale: 1.02;
+    }
+    h2 {
+      cursor: default;
+      padding: 16px 32px;
+    }
+    span {
+      cursor: default;
+      font-size: 2.5em;
+      font-weight: 700;
+      color: var(--primary);
+      padding: 0 16px;
+    }
+    p {
+      cursor: default;
+      color: var(--text-light);
+      padding: 0 32px 16px 32px;
+    }
+  }
+}
+
+
+.user-manager,
+.product-manager {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1;
+} h2 {
+  font-size: 2em;
+  line-height: 1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  &:hover {
+    border-color: #646cff;
+  }
+  &:focus,
+  &:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+}
+
+a {
+  font-weight: 500;
+  color: var(--primary);
+  text-decoration: inherit;
+  transition: color 150ms;
+  &:hover {
+    color: var(--primary-dark);
+  }
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+} .col {
+  display: flex;
+  flex-direction: column;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.pa-1 {
+  padding: 8px;
+} .gap-1 {
+  gap: 8px;
+}
+
+.border-1 {
+  border-radius: 1em;
+  border: solid 1px var(--text);
+}
+
+
+.glowing {
+  will-change: filter;
+  transition: filter 300ms;
+}
+.glowing:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.glowing.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+.card {
+  padding: 2em;
+  background-color: var(--background-t);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 2em;
+}

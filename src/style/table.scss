@@ -1,0 +1,36 @@
+table {
+  text-align: left;
+  border: solid 1px var(--text);
+  border-collapse: collapse;
+
+  thead {
+    background-color: var(--background-t);
+  }
+  tr {
+    border: solid 1px var(--text);
+    &:nth-child(2n) {
+      background-color: var(--background-t);
+    }
+
+    th, td {
+      padding: 12px 32px;
+      max-width: 500px;
+
+      &:first-child {
+        padding: 12px
+      }
+      &:last-child {
+        padding: 12px
+      }
+    }
+
+    td.actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      & > * {
+        flex-grow: 1;
+      }
+    }
+  }
+}
