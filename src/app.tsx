@@ -25,7 +25,11 @@ export default () => {
    * [x] product manager
    * [x] admins manager
    * [ ] basket
-   * [ ] setssionStorage
+   * [ ] validate basket
+   * [ ] détails product
+   * [ ] update and delete account
+   * [ ] CRUD order
+   * [ ] sessionStorage
    * [ ] error message instead of alert
    */
 
