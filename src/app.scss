@@ -33,14 +33,15 @@
       padding: 0 32px 16px 32px;
     }
     button {
-      margin: 8px 16px 16px 16px;
+      margin: 8px 16px;
     }
   }
 }
 
 
 .user-manager,
-.product-manager {
+.product-manager,
+.basket {
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -102,6 +103,9 @@ a {
 } .center {
   align-items: center;
   justify-content: center;
+} .end {
+  align-items: flex-end;
+  justify-content: flex-end;
 }
 
 .space-between {
@@ -110,6 +114,10 @@ a {
 
 .pa-2 {
   padding: 8px;
+} .pb-3 {
+  padding-bottom: 12px;
+} .pr-5 {
+  padding-right: 20px;
 } .gap-2 {
   gap: 8px;
 }

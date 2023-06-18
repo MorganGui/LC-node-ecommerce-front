@@ -9,6 +9,7 @@ import Product from './classes/Product'
 import OrderRow from './classes/OrderRow'
 
 import Home from './views/home'
+import ProductViews from './views/productView'
 import Basket from './views/basket'
 import Profile from './views/auth/profile'
 import ProductManager from './views/productManager'
@@ -39,7 +40,7 @@ export default () => {
    * [x] admins manager
    * [x] basket
    * [ ] validate basket
-   * [ ] détails product
+   * [x] détails product
    * [ ] update and delete account
    * [ ] CRUD order
    * [ ] basket in localStorage
@@ -54,7 +55,8 @@ export default () => {
         <div className="wrapper">
           <Routes>
             <Route path="/" element={ <Home products={products} basket={basket} setBasket={setBasket} /> } />
-            <Route path="/basket" element={ <Basket products={products} basket={basket} setBasket={setBasket} /> } />
+            <Route path="/product/:id" element={ <ProductViews products={products} /> } />
+            <Route path="/basket" element={ <Basket products={products} basket={basket} setBasket={setBasket} user={user} /> } />
             <Route path="/profile" element={ <Profile user={user} setUser={setUser} /> } />
             <Route path="/product-manager" element={ <ProductManager user={user} /> } />
             <Route path="/user-manager" element={ <UserManager user={user} /> } />
