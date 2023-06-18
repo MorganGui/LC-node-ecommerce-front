@@ -42,6 +42,20 @@ export default class User {
       return response.toString()
     }
   }
+  async delete(token: string) {
+    const response = await fetch(User.url + '/' + this.id, {
+      method: 'DELETE',
+      headers: new Headers({
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      })
+    })
+    if (response.status === 200) {
+      return await response.json()
+    } else {
+      return response.toString()
+    }
+  }
 
   static async register(firstname: string, lastname: string, mail: string, password: string) {
     const response = await fetch(this.url, {
@@ -75,15 +89,16 @@ export default class User {
         password: password
       })
     })
-    if (response.status === 200) {
-      const json = await response.json()
+
+    const json = await response.json()
+    if (!json.error) {
       return this.jsonToUser(json.user, json.token)
     } else {
-      return response.toString()
+      return json.error
     }
   }
 
-  static async getAdmins(token: string) {
+  static async getAdmins(token: string): Promise<string | User[]> {
     const response = await fetch(this.url + '/admin', {
       method: 'GET',
       headers: new Headers({
@@ -91,15 +106,17 @@ export default class User {
         'Authorization': `Bearer ${token}`
       })
     })
-    if (response.status === 200) {
-      const jsonList = await response.json()
+
+    const json = await response.json()
+    if (json.error)
+      return json.error.toString()
+
+    else {
       const list: User[] = []
-      for (const json of jsonList) {
-        list.push(this.jsonToUser(json, null))
+      for (const object of json) {
+        list.push(this.jsonToUser(object, null))
       }
       return list
-    } else {
-      return response.toString()
     }
   }
   static async getByMail(token: string, mail: string) {
@@ -110,11 +127,14 @@ export default class User {
         'Authorization': `Bearer ${token}`
       })
     })
-    if (response.status === 200) {
-      const json = await response.json()
-      return this.jsonToUser(json, null)
-    } else {
-      return response.toString()
-    }
+
+    const json = await response.json()
+    if (!json)
+      return null
+
+    if (json.error)
+      return json.error.toString()
+
+    return this.jsonToUser(json, null)
   }
 }

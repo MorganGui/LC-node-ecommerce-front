@@ -13,6 +13,8 @@ export default ({  user, addToAdmins, removeFromAdmins }: { user: User, addToAdm
       const response = await User.getByMail(user.token, searchedUserMail)
       if (typeof response !== 'string') {
         setSearchedUser(new User(user.token, response.id, response.firstname, response.lastname, response.mail, response.role))
+      } else {
+        alert(response)
       }
     }
   }
@@ -30,7 +32,7 @@ export default ({  user, addToAdmins, removeFromAdmins }: { user: User, addToAdm
         </div>
       )
       else return (
-        <h3>Utilisateur non trouvé</h3>
+        <h3 className="error">Utilisateur non trouvé</h3>
       )
     }
   }

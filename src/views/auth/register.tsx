@@ -34,23 +34,23 @@ export default ({ setUser }: { setUser: Function }) => {
         <h1>Créer un compte</h1>
         <label htmlFor="firstname">
           Prénom
-          <input type="text" name="firstname" id="firstname" required value={firstname} onChange={(e) => setFirstname(e.target.value) } />
+          <input type="text" id="firstname" required value={firstname} onChange={(e) => setFirstname(e.target.value) } />
         </label>
         <label htmlFor="lastname">
           Nom
-          <input type="text" name="lastname" id="lastname" required value={lastname} onChange={(e) => setLastname(e.target.value) } />
+          <input type="text" id="lastname" required value={lastname} onChange={(e) => setLastname(e.target.value) } />
         </label>
         <label htmlFor="mail">
           Email
-          <input type="email" name="mail" id="mail" required value={mail} onChange={(e) => setMail(e.target.value) } />
+          <input type="email" id="mail" required value={mail} onChange={(e) => setMail(e.target.value) } />
         </label>
         <label htmlFor="password">
           Mot de passe
-          <input type="password" name="password" id="password" required value={password} onChange={(e) => setPassword(e.target.value) } />
+          <input type="password" id="password" required value={password} onChange={(e) => setPassword(e.target.value) } />
         </label>
         <label htmlFor="confirm">
           Confirmer le mot de passe
-          <input type="password" name="confirm" id="confirm" required value={confirm} onChange={(e) => setConfirm(e.target.value) } />
+          <input type="password" id="confirm" required value={confirm} onChange={(e) => setConfirm(e.target.value) } />
         </label>
         <button type="submit">Créer</button>
       </form>

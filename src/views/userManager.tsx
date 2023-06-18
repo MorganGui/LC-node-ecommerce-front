@@ -42,7 +42,7 @@ export default ({ user }: { user: User | null }) => {
     return (
       <div className="user-manager">
         <DashboardNav />
-        <h2>Gestion des administrateurs</h2>
+        <h2 className="row center">Gestion des administrateurs</h2>
 
         <SearchUser user={user} addToAdmins={addToAdmins} removeFromAdmins={removeFromAdmins} />
 

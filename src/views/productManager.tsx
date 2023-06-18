@@ -26,7 +26,7 @@ export default ({ user }: { user: User | null }) => {
     return (
       <div className="product-manager">
         <DashboardNav />
-        <h2>Gestion des produits</h2>
+        <h2 className="row center">Gestion des produits</h2>
         <AddProduct user={user} reloadProducts={reloadProducts} />
         <ProductList user={user} products={products} reloadProducts={reloadProducts} />
       </div>

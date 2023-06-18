@@ -7,7 +7,7 @@ export default ({ user }: { user: User | null }) => {
     return (
       <div className="order-manager">
         <DashboardNav />
-        <h2>Gestion des commandes</h2>
+        <h2 className="row center">Gestion des commandes</h2>
       </div>
     )
   } else {

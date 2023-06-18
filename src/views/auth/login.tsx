@@ -26,11 +26,11 @@ export default ({ setUser }: { setUser: Function }) => {
         <h1>Connexion</h1>
         <label htmlFor="mail">
           Email
-          <input type="email" name="mail" id="mail" required value={mail} onChange={(e) => setMail(e.target.value) } />
+          <input type="email" id="mail" required value={mail} onChange={(e) => setMail(e.target.value) } />
         </label>
         <label htmlFor="password">
           Mot de passe
-          <input type="password" name="password" id="password" required value={password} onChange={(e) => setPassword(e.target.value) } />
+          <input type="password" id="password" required value={password} onChange={(e) => setPassword(e.target.value) } />
         </label>
         <button type="submit">Connexion</button>
       </form>
