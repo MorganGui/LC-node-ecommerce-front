@@ -17,7 +17,7 @@ export default ({ user, reloadProducts }: { user: User | null, reloadProducts: F
   }
 
   return (
-    <form onSubmit={saveProduct} className="col gap-1 border-1 pa-1">
+    <form onSubmit={saveProduct} className="col gap-2 border-1 pa-2">
       <h3>Ajouter un produit :</h3>
       <input type="text" placeholder="Nom" value={name} onChange={(e) => setName(e.target.value)} required />
       <input type="number" placeholder="Prix" value={price} onChange={(e) => setPrice(parseFloat(e.target.value))} required />

@@ -20,7 +20,7 @@ export default ({  user, addToAdmins, removeFromAdmins }: { user: User, addToAdm
   function SearchedUserContainer() {
     if (haveSearch) {
       if (searchedUser) return (
-        <div className="row gap-1 space-between border-1 pa-1">
+        <div className="row gap-2 space-between border-1 pa-2">
           <div className="col">
             <h3>Utilisateur trouvé :</h3>
             <p>{searchedUser.firstname} {searchedUser.lastname}</p>
@@ -49,8 +49,8 @@ export default ({  user, addToAdmins, removeFromAdmins }: { user: User, addToAdm
   return (
     <>
       <form onSubmit={search}>
-        <div className="row pa-1 gap-1">
-          <label className="gap-1">
+        <div className="row pa-2 gap-2">
+          <label className="gap-2">
             <p>Chercher un utilisateur</p>
             <input type="email" required placeholder="exemple@domain.com" value={searchedUserMail} onChange={(e) => setSearchedUserMail(e.target.value)} />
           </label>

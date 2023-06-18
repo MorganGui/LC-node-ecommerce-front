@@ -3,7 +3,7 @@ import Product from '../classes/Product'
 import User from '../classes/User'
 import AddProduct from '../components/productManager/addProduct'
 import ProductList from '../components/productManager/productList'
-import Error401 from './error401'
+import Error401 from './errors/error401'
 
 export default ({ user }: { user: User | null }) => {
   const [products, setProducts]: [Product[], Function] = useState([])

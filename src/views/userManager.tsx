@@ -1,7 +1,7 @@
 import '../style/table.scss'
 import { useEffect, useState } from 'react'
 import User from '../classes/User'
-import Error401 from './error401'
+import Error401 from './errors/error401'
 import SearchUser from '../components/userManager/searchUser'
 
 export default ({ user }: { user: User | null }) => {

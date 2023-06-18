@@ -1,6 +1,6 @@
-import '../style/form.scss'
+import '../../style/form.scss'
 import { FormEvent, useState } from 'react'
-import User from '../classes/User'
+import User from '../../classes/User'
 import { useNavigate } from 'react-router-dom'
 
 export default ({ setUser }: { setUser: Function }) => {

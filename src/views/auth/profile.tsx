@@ -1,5 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom'
-import User from '../classes/User'
+import User from '../../classes/User'
 
 export default ({ user, setUser }: { user: User | null, setUser: Function }) => {
   const navigate = useNavigate()
@@ -18,7 +18,7 @@ export default ({ user, setUser }: { user: User | null, setUser: Function }) => 
   } else {
     return (
       <>
-        <p>Oups, tu n'es pas connecté. Essaye de te <Link to="/login">Connecter</Link> pour avoir un profil.</p>
+        <p>Oups, tu n'es pas connecté. Essaye de te <Link to="/login">Connecter</Link> pour accéder à ton profil.</p>
       </>
     )
   }

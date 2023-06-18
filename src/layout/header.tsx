@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom'
 import User from '../classes/User'
+import OrderRow from '../classes/OrderRow'
 
-export default ({ user }: { user: User | null }) => {
+export default ({ user, basket }: { user: User | null, basket: OrderRow[] }) => {
   function LoginButton() {
     if (user === null) return (
       <Link to="/login">Connexion</Link>
@@ -25,15 +26,31 @@ export default ({ user }: { user: User | null }) => {
       </div>
     )
   }
+  function BasketLength() {
+    if (basket.length > 0) {
+      let quantity = 0
+      for (const row of basket) {
+        quantity += row.quantity
+      }
+
+      return (
+        <h3>( {quantity} )</h3>
+      )
+    }
+  }
 
   return (
     <header>
       <Link to="/"><h1>ecommerce</h1></Link>
       <span>
+        <ManagerLink />
+        <Link to="/basket" className="row center gap-2">
+          <BasketLength />
+          <i className="fa-solid fa-basket-shopping fa-xl"></i>
+        </Link>
+        <FullName />
         <RegisterButton />
         <LoginButton />
-        <ManagerLink />
-        <FullName />
       </span>
     </header>
   )
