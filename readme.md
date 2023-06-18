@@ -30,7 +30,7 @@ Grille de notation :
   gestion des routes back sécurisées : 5pts
   Affichage des produits sur la page d'accueil : 1pt
   Possibilité d'ajouter des produits à un panier : 1pt
-Affichage d'une page de détail article : 1pt
+  Affichage d'une page de détail article : 1pt
   Affichage du Panier : 1pt
 Possibilité de valider un panier si utilisateur connecté : 1pt
   Possibilité de s'inscrire ou de se connecter : 2pts

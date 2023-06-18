@@ -29,6 +29,18 @@ export default ({ products, basket, setBasket, user }: { products: Product[], ba
       <p>Pour valider le panier, vous devez vous <Link to="/login">connecter</Link>.</p>
     )
   }
+  function BasketPrice() {
+    let price = 0
+
+    for (const row of basket) {
+      const product = products.find(product => product.id === row.product)
+      price += product!.price * row.quantity
+    }
+
+    return (
+      <h2>Total: {price.toFixed(2)}€</h2>
+    )
+  }
 
   if (basket.length > 0) return (
     <div className="basket center">
@@ -64,6 +76,7 @@ export default ({ products, basket, setBasket, user }: { products: Product[], ba
             }
           </tbody>
       </table>
+      <BasketPrice />
       <ValidateBasketButton />
     </div>
   )

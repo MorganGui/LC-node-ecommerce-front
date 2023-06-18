@@ -18,11 +18,10 @@ export default ({ user, basket }: { user: User | null, basket: OrderRow[] }) => 
       <Link to="/profile">{user.firstname + ' ' + user.lastname + (user.role === 'admin' ? ' (admin)' : '')}</Link>
     )
   }
-  function ManagerLink() {
+  function Dashboard() {
     if (user && user.role === 'admin') return (
       <div className="col">
-        <Link to="/product-manager">Gérer les produits</Link>
-        <Link to="/user-manager">Gérer les utilisateurs</Link>
+        <Link to="/order-manager">Dashboard</Link>
       </div>
     )
   }
@@ -43,7 +42,7 @@ export default ({ user, basket }: { user: User | null, basket: OrderRow[] }) => 
     <header>
       <Link to="/"><h1>ecommerce</h1></Link>
       <span>
-        <ManagerLink />
+        <Dashboard />
         <Link to="/basket" className="row center gap-2">
           <BasketLength />
           <i className="fa-solid fa-basket-shopping fa-xl"></i>

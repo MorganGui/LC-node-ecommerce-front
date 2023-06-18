@@ -17,6 +17,7 @@ import UserManager from './views/userManager'
 import Login from './views/auth/login'
 import Register from './views/auth/register'
 import Error404 from './views/errors/error404'
+import OrderManager from './views/orderManager'
 
 export default () => {
   const [user, setUser]: [User | null, Function] = useState(null)
@@ -58,6 +59,7 @@ export default () => {
             <Route path="/product/:id" element={ <ProductViews products={products} /> } />
             <Route path="/basket" element={ <Basket products={products} basket={basket} setBasket={setBasket} user={user} /> } />
             <Route path="/profile" element={ <Profile user={user} setUser={setUser} /> } />
+            <Route path="/order-manager" element={ <OrderManager user={user} /> } />
             <Route path="/product-manager" element={ <ProductManager user={user} /> } />
             <Route path="/user-manager" element={ <UserManager user={user} /> } />
             <Route path="/login" element={ <Login setUser={setUser}  /> } />
